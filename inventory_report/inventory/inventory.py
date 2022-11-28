@@ -17,7 +17,7 @@ class Inventory:
             if path.endswith(".xml"):
                 data = xmltodict.parse(data.read())["dataset"]["record"]
 
-        if type == "complete":
-            return CompleteReport.generate(data)
-        else:
+        if type == "simples":
             return SimpleReport.generate(data)
+        else:
+            return CompleteReport.generate(data)
